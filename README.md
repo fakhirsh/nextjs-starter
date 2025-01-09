@@ -1,6 +1,7 @@
 # Nextjs Setup
 
 ## 1. Install Nextjs
+
 First switch to the directory where you want to create the project. Then:
 
 ```bash
@@ -33,7 +34,8 @@ Remove any boiler plate code from `src/globals.css` and add the following:
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+html,
+body {
     padding: 0;
     margin: 0;
 }
@@ -53,7 +55,7 @@ Delete all the boiler plate code from `src/pages/index.tsx` and add the followin
 
 ```tsx
 export default function Home() {
-  return <h1>Hello World</h1>;
+    return <h1>Hello World</h1>;
 }
 ```
 
@@ -62,17 +64,18 @@ export default function Home() {
 Add the following in `next.config.ts`:
 
 ```ts
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true, // Enable React Strict Mode
-
+    reactStrictMode: true // Enable React Strict Mode
 };
 
 export default nextConfig;
 ```
 
-# 3. EditorConfig
+# 3. Installing Plugins
+
+## 1. EditorConfig
 
 Create a `.editorconfig` file in the root of the project and add the following:
 
@@ -88,4 +91,34 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 ```
 
+## 2. Prettier
 
+Please see the latest installation instruction from the [official website](https://prettier.io/docs/en/install).
+
+1. Install prettier:
+
+```bash
+npm install --save-dev --save-exact prettier
+```
+
+Create a basic configuration file `.prettierrc` in the root of the project:
+
+```json
+{
+    "singleQuote": true,
+    "trailingComma": "none"
+}
+```
+
+Add the following in `package.json`:
+
+```json
+"scripts": {
+    ...
+    "prettier": "prettier --write ."
+}
+```
+
+Also create a `.prettierignore` file in the root of the project. Copy everything from `.gitignore` and paste it in `.prettierignore`.
+
+_Note: check if you can use `.gitignore` instead of `.prettierignore`_
