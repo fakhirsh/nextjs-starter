@@ -57,3 +57,19 @@ export default function Home() {
 }
 ```
 
+### 4. Enable React Strict Mode
+
+Add the following in `next.config.ts`:
+
+```ts
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  reactStrictMode: true, // Enable React Strict Mode
+  
+};
+
+export default nextConfig;
+```
+
+
