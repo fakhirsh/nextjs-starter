@@ -66,10 +66,26 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true, // Enable React Strict Mode
-  
+
 };
 
 export default nextConfig;
+```
+
+# 3. EditorConfig
+
+Create a `.editorconfig` file in the root of the project and add the following:
+
+```ini
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 4
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
 ```
 
 
