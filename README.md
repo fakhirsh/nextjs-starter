@@ -122,3 +122,54 @@ Add the following in `package.json`:
 Also create a `.prettierignore` file in the root of the project. Copy everything from `.gitignore` and paste it in `.prettierignore`.
 
 _Note: check if you can use `.gitignore` instead of `.prettierignore`_
+
+## 3. StyleLint ??
+
+Since we're using Tailwind CSS, we don't need to use StyleLint.
+
+## 4. ESLint Rules
+
+Let's start adding following rules to the starter `eslint.config.mjs` file:
+
+```json
+const eslintConfig = [
+    ...compat.extends('next/core-web-vitals', 'next/typescript'),
+    {
+        rules: {
+            'max-len': ['error', { code: 80 }], // Enforce max 80 characters per line
+            'semi': ['error', 'always'],       // Require semicolons
+            'quotes': ['error', 'single'],     // Enforce double quotes
+            'no-console': ['warn'],            // Warn on console usage
+        }
+    }
+];
+```
+
+## 5. ESLint Plugin: Simple Import Sort
+
+First install the plugin:
+
+```bash
+npm install --save-dev eslint-plugin-simple-import-sort
+```
+
+Then add the following to the `eslint.config.mjs`:
+
+```json
+
+
+
+# Repository Maintenance
+
+Check for outdated packages:
+
+```bash
+npm outdated
+```
+
+Update all packages (specially the ones in *red*):
+
+```bash
+npm update
+```
+

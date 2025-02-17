@@ -10,7 +10,16 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-    ...compat.extends('next/core-web-vitals', 'next/typescript')
+    ...compat.extends('next/core-web-vitals', 'next/typescript'),
+    {
+        plugins: ['simple-import-sort', 'import'],
+        rules: {
+            'max-len': ['error', { code: 80 }], // Max 80 characters per line
+            'semi': ['error', 'always'],       // Require semicolons
+            'quotes': ['error', 'single'],     // Enforce double quotes
+            'no-console': ['warn'],            // Warn on console usage
+        }
+    }
 ];
 
 export default eslintConfig;
