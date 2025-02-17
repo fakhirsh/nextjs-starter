@@ -155,7 +155,7 @@ npm install --save-dev eslint-plugin-simple-import-sort
 
 Then add the following to the `eslint.config.mjs`:
 
-```json
+````json
 
 
 
@@ -165,11 +165,10 @@ Check for outdated packages:
 
 ```bash
 npm outdated
-```
+````
 
-Update all packages (specially the ones in *red*):
+Update all packages (specially the ones in _red_):
 
 ```bash
 npm update
 ```
-
